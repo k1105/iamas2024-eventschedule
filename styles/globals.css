@@ -19,3 +19,17 @@ body {
   background-color: black;
   transition: all 5s ease;
 }
+
+.hoge {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.diviser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 100vh;
+  border-right: 1px solid white;
+}

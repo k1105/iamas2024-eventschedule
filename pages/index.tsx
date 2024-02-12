@@ -3,6 +3,12 @@ import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import { events } from "@/data/eventSchedule";
 import { useRef } from "react";
+import { Noto_Serif_JP } from "next/font/google";
+
+const notoSerifJp = Noto_Serif_JP({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+});
 
 type Event = {
   start: string;
@@ -42,13 +48,22 @@ export default function Home() {
       }
     }
 
-    console.log(tempEvents);
-
     setTodayEvents(tempEvents);
-    // queuedEventsContainerRef.current!.style.marginTop = `${
-    //   -offsetRef.current * 20
-    // }vh`;
   }, []);
+
+  useEffect(() => {
+    for (let i = 0; i < todayEventsCount.current; i++) {
+      const elem = document.getElementById("event" + i);
+      if (elem) {
+        if (i == closedEventsCount.current) {
+          elem.scrollIntoView({ behavior: "smooth" });
+          elem.style.opacity = "1";
+        } else {
+          elem.style.opacity = "0.2";
+        }
+      }
+    }
+  }, [todayEvents]);
 
   useEffect(() => {
     console.log(eventState);
@@ -103,9 +118,12 @@ export default function Home() {
         const hours = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
+        const displayHours = hours < 10 ? "0" + hours : hours;
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const displayMinutes = minutes < 10 ? "0" + minutes : minutes;
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        notificationContentRef.current!.innerText = `あと${hours}:${minutes}:${seconds}`;
+        const displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+        notificationContentRef.current!.innerHTML = `<span class="hoge">次のイベントまで</span> ${displayHours}:${displayMinutes}:${displaySeconds}`;
 
         setEventState("queued");
         break;
@@ -146,8 +164,9 @@ export default function Home() {
       </Head>
       <main>
         <div className="status-color-field" ref={colorFieldRef}></div>
+        <div className="diviser"></div>
         {/* eventState */}
-        <div style={{ position: "fixed", top: "10vh", left: "5vw" }}>
+        <div style={{ position: "fixed", top: "20vh", left: "15vw" }}>
           <div
             style={{
               border: "1px solid #fff",
@@ -161,7 +180,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div ref={queuedEventsContainerRef} style={{ marginBottom: "100vh" }}>
+        <div ref={queuedEventsContainerRef} style={{ marginBottom: "50vh" }}>
           {(() => {
             const res: ReactNode[] = [];
             todayEvents.forEach((event, id) => {
@@ -171,17 +190,36 @@ export default function Home() {
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    margin: "0 5vw",
-                    padding: "10vh 0",
+                    margin: "0 5vw -10vh",
+                    padding: "20vh 0 0",
                   }}
                 >
+                  <div
+                    style={{
+                      width: "5vw",
+                      position: "relative",
+                      marginTop: "auto",
+                    }}
+                  >
+                    <p
+                      style={{
+                        position: "absolute",
+                        bottom: "20vh",
+                        right: "-15vw",
+                        width: "600px",
+                        transform: "rotate(90deg)",
+                      }}
+                    >
+                      {event.start} - {event.end}
+                    </p>
+                  </div>
                   <div style={{ width: "30vw", marginTop: "4rem" }}>
                     <h1>{event.name}</h1>
                     <p style={{ marginTop: "3rem", lineHeight: "1.7rem" }}>
                       {event.description}
                     </p>
                   </div>
-                  <div style={{ width: "55vw", position: "relative" }}>
+                  <div style={{ width: "45vw", position: "relative" }}>
                     <Image
                       src={"/img/" + event.img + ".webp"}
                       alt={"/img/" + event.img + ".webp"}
@@ -217,6 +255,7 @@ export default function Home() {
 
         <div
           ref={notificationRef}
+          className={notoSerifJp.className}
           style={{
             position: "fixed",
             top: 0,
@@ -233,8 +272,8 @@ export default function Home() {
               position: "absolute",
               display: "flex",
               justifyContent: "space-between",
-              width: "90vw",
-              left: "5vw",
+              width: "80vw",
+              left: "15vw",
               bottom: "5vh",
             }}
           >
