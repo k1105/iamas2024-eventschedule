@@ -4,17 +4,21 @@ import Image from "next/image";
 import { events } from "@/data/eventSchedule";
 import { useRef } from "react";
 import { Noto_Serif_JP } from "next/font/google";
+import { Inter } from "next/font/google";
 
 const notoSerifJp = Noto_Serif_JP({
   weight: ["400", "500"],
   subsets: ["latin"],
 });
 
+const inter = Inter({ subsets: ["latin"] });
+
 type Event = {
   start: string;
   end: string;
   name: string;
   img: string;
+  time: string;
   description: string;
 };
 
@@ -185,48 +189,55 @@ export default function Home() {
             const res: ReactNode[] = [];
             todayEvents.forEach((event, id) => {
               res.push(
-                <div
-                  id={`event${id}`}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    margin: "0 5vw -10vh",
-                    padding: "20vh 0 0",
-                  }}
-                >
+                <div style={{ position: "relative" }}>
                   <div
+                    className={inter.className}
                     style={{
-                      width: "5vw",
-                      position: "relative",
-                      marginTop: "auto",
+                      position: "absolute",
+                      top: "-15vw",
+                      left: "-15vw",
+                      width: "30vw",
+                      height: "30vw",
+                      transform:
+                        "rotate(-90deg) translateY(calc(10vw - 1.5rem)) translateX(-20vh)",
+                      textAlign: "left",
+                      fontSize: "3rem",
+                      lineHeight: "30vw",
                     }}
                   >
-                    <p
+                    {event.time}
+                  </div>
+                  <div
+                    id={`event${id}`}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      margin: "0 5vw -10vh",
+                      padding: "20vh 0 0",
+                    }}
+                  >
+                    <div
                       style={{
-                        position: "absolute",
-                        bottom: "20vh",
-                        right: "-15vw",
-                        width: "600px",
-                        transform: "rotate(90deg)",
+                        width: "5vw",
+                        position: "relative",
+                        marginTop: "auto",
                       }}
-                    >
-                      {event.start} - {event.end}
-                    </p>
-                  </div>
-                  <div style={{ width: "30vw", marginTop: "4rem" }}>
-                    <h1>{event.name}</h1>
-                    <p style={{ marginTop: "3rem", lineHeight: "1.7rem" }}>
-                      {event.description}
-                    </p>
-                  </div>
-                  <div style={{ width: "45vw", position: "relative" }}>
-                    <Image
-                      src={"/img/" + event.img + ".webp"}
-                      alt={"/img/" + event.img + ".webp"}
-                      layout="responsive"
-                      width={16}
-                      height={9}
-                    />{" "}
+                    ></div>
+                    <div style={{ width: "30vw", marginTop: "4rem" }}>
+                      <h1>{event.name}</h1>
+                      <p style={{ marginTop: "3rem", lineHeight: "1.7rem" }}>
+                        {event.description}
+                      </p>
+                    </div>
+                    <div style={{ width: "45vw", position: "relative" }}>
+                      <Image
+                        src={"/img/" + event.img + ".webp"}
+                        alt={"/img/" + event.img + ".webp"}
+                        layout="responsive"
+                        width={16}
+                        height={9}
+                      />{" "}
+                    </div>
                   </div>
                 </div>
               );

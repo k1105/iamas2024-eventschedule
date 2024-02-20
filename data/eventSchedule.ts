@@ -3,6 +3,7 @@ type Event = {
   end: string;
   name: string;
   img: string;
+  time: string;
   description: string;
 };
 
@@ -10,6 +11,7 @@ export const events: Event[] = [
   {
     start: "Feb 22, 2024 14:30:00",
     end: "Feb 22, 2024 16:00:00",
+    time: "14:30-16:00",
     name: "IAMASの「できるまで」(1日目)",
     img: "iamas01",
     description:
@@ -18,6 +20,7 @@ export const events: Event[] = [
   {
     start: "Feb 22, 2024 16:30:00",
     end: "Feb 22, 2024 18:00:00",
+    time: "16:30-18:00",
     name: "IAMASの「できるまで」(1日目)",
     img: "iamas01",
     description:
@@ -26,6 +29,7 @@ export const events: Event[] = [
   {
     start: "Feb 23, 2024 10:00:00",
     end: "Feb 23, 2024 11:30:00",
+    time: "10:00-11:30",
     name: "IAMASの「できるまで」(2日目)",
     img: "iamas02",
     description:
@@ -34,6 +38,7 @@ export const events: Event[] = [
   {
     start: "Feb 23, 2024 12:00:00",
     end: "Feb 23, 2024 13:30:00",
+    time: "12:00-13:30",
     name: "IAMASの「できるまで」(2日目)",
     img: "iamas02",
     description:
@@ -42,6 +47,7 @@ export const events: Event[] = [
   {
     start: "Feb 23, 2024 14:00:00",
     end: "Feb 23, 2024 15:30:00",
+    time: "14:00-15:30",
     name: "ビデオゲームからインタラクティブ表現を再考する",
     img: "matsunaga",
     description:
@@ -50,6 +56,7 @@ export const events: Event[] = [
   {
     start: "Feb 23, 2024 16:00:00",
     end: "Feb 23, 2024 17:30:00",
+    time: "16:00-17:30",
     name: "身体のリベリオン、あるいはサイド・バイ・サイド",
     img: "hanagata",
     description:
@@ -58,6 +65,7 @@ export const events: Event[] = [
   {
     start: "Feb 24, 2024 10:00:00",
     end: "Feb 24, 2024 11:30:00",
+    time: "10:00-11:30",
     name: "「風の音、風の光」 ——ティム・インゴルドのサウンドスケープ批判を起点として——",
     img: "place-sense-media",
     description:
@@ -66,6 +74,7 @@ export const events: Event[] = [
   {
     start: "Feb 24, 2024 12:00:00",
     end: "Feb 24, 2024 13:30:00",
+    time: "12:00-13:30",
     name: "プロジェクト研究に関する、教員による報告会",
     img: "project",
     description:
@@ -74,6 +83,7 @@ export const events: Event[] = [
   {
     start: "Feb 24, 2024 12:00:00",
     end: "Feb 24, 2024 13:30:00",
+    time: "12:00-13:30",
     name: "「壁と卵」を再考する",
     img: "kawase",
     description:
@@ -82,6 +92,7 @@ export const events: Event[] = [
   {
     start: "Feb 24, 2024 17:00:00",
     end: "Feb 24, 2024 21:00:00",
+    time: "17:00-21:00",
     name: "NxPC.Live vol.67 FULL-SWING",
     img: "nxpc-vol67",
     description:
@@ -90,6 +101,7 @@ export const events: Event[] = [
   {
     start: "Feb 25, 2024 10:00:00",
     end: "Feb 25, 2024 11:00:00",
+    time: "10:00-11:00",
     name: "時間論でみるIAMAS2024",
     img: "hirai",
     description:
@@ -98,6 +110,7 @@ export const events: Event[] = [
   {
     start: "Feb 25, 2024 12:00:00",
     end: "Feb 25, 2024 13:30:00",
+    time: "12:00-13:30",
     name: "リサーチ・スルー・デザイン (RtD) から研究・表現を再考する",
     img: "miyoshi",
     description:
@@ -106,6 +119,7 @@ export const events: Event[] = [
   {
     start: "Feb 25, 2024 14:00:00",
     end: "Feb 25, 2024 15:30:00",
+    time: "14:00-15:30",
     name: "行為の芸術：社会的実践としての演劇とパフォーマンス",
     img: "takayama",
     description:
@@ -114,6 +128,7 @@ export const events: Event[] = [
   {
     start: "Feb 25, 2024 16:30:00",
     end: "Feb 25, 2024 18:00:00",
+    time: "16:30-18:00",
     name: "み感\nわ謝\n退任記念トーク!（＠卒展）",
     img: "miwa-sensei",
     description:
