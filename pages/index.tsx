@@ -36,12 +36,24 @@ export default function Home() {
   const eventStatusTagRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    const now = new Date().getTime();
-    const today: string = new Date().toISOString().split("T")[0];
+    const now = new Date(
+      Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
+    ).getTime();
+    const today: string = new Date(
+      Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
+    )
+      .toISOString()
+      .split("T")[0];
     const tempEvents: Event[] = [];
 
     console.log(today);
-    console.log(new Date().toISOString().split("T")[1]);
+    console.log(
+      new Date(
+        Date.now() + (new Date().getTimezoneOffset() + 9 * 60) * 60 * 1000
+      )
+        .toISOString()
+        .split("T")[1]
+    );
 
     for (const event of events) {
       const startDay = new Date(event.start).toISOString().split("T")[0];
