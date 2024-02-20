@@ -40,6 +40,9 @@ export default function Home() {
     const today: string = new Date().toISOString().split("T")[0];
     const tempEvents: Event[] = [];
 
+    console.log(today);
+    console.log(new Date().toISOString().split("T")[1]);
+
     for (const event of events) {
       const startDay = new Date(event.start).toISOString().split("T")[0];
       if (today == startDay) {
