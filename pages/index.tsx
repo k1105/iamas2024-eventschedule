@@ -170,7 +170,7 @@ export default function Home() {
         <div className="status-color-field" ref={colorFieldRef}></div>
         <div className="diviser"></div>
         {/* eventState */}
-        <div style={{ position: "fixed", top: "20vh", left: "15vw" }}>
+        <div style={{ position: "fixed", top: "20vh", left: "12vw" }}>
           <div
             style={{
               border: "1px solid #fff",
@@ -218,12 +218,11 @@ export default function Home() {
                   >
                     <div
                       style={{
-                        width: "5vw",
-                        position: "relative",
-                        marginTop: "auto",
+                        width: "32vw",
+                        marginTop: "4rem",
+                        marginLeft: "7vw",
                       }}
-                    ></div>
-                    <div style={{ width: "30vw", marginTop: "4rem" }}>
+                    >
                       <h1>{event.name}</h1>
                       <p style={{ marginTop: "3rem", lineHeight: "1.7rem" }}>
                         {event.description}
@@ -283,8 +282,8 @@ export default function Home() {
               position: "absolute",
               display: "flex",
               justifyContent: "space-between",
-              width: "80vw",
-              left: "15vw",
+              width: "85vw",
+              left: "10vw",
               bottom: "5vh",
             }}
           >
