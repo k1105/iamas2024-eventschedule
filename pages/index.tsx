@@ -223,7 +223,7 @@ export default function Home() {
                         marginLeft: "7vw",
                       }}
                     >
-                      <h1>{event.name}</h1>
+                      <h1 className={inter.className}>{event.name}</h1>
                       <p style={{ marginTop: "3rem", lineHeight: "1.7rem" }}>
                         {event.description}
                       </p>
