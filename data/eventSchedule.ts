@@ -65,7 +65,7 @@ export const events: Event[] = [
   },
   {
     start: "Feb 21 2024 13:30:00",
-    end: "Feb 21, 2024 13:40:00",
+    end: "Feb 21, 2024 13:39:00",
     time: "13:30-13:40",
     name: "石塚 / 後藤 / 前林 (リハーサル)",
     img: "place-sense-media",
@@ -74,7 +74,7 @@ export const events: Event[] = [
   },
   {
     start: "Feb 21 2024 13:40:00",
-    end: "Feb 21, 2024 13:50:00",
+    end: "Feb 21, 2024 13:49:00",
     time: "13:40-13:50",
     name: "プロジェクト教員 (リハーサル)",
     img: "project",
@@ -83,7 +83,7 @@ export const events: Event[] = [
   },
   {
     start: "Feb 21, 2024 13:50:00",
-    end: "Feb 21, 2024 14:00:00",
+    end: "Feb 21, 2024 13:59:00",
     time: "13:50-14:00",
     name: "石塚 / 前林 (リハーサル)",
     img: "kawase",
@@ -92,7 +92,7 @@ export const events: Event[] = [
   },
   {
     start: "Feb 21, 2024 14:00:00",
-    end: "Feb 21, 2024 14:10:00",
+    end: "Feb 21, 2024 14:09:00",
     time: "14:00-14:10",
     name: "山岸 / 小林 (リハーサル)",
     img: "hirai",
@@ -101,7 +101,7 @@ export const events: Event[] = [
   },
   {
     start: "Feb 21, 2024 14:10:00",
-    end: "Feb 21, 2024 14:20:00",
+    end: "Feb 21, 2024 14:19:00",
     time: "14:10-14:20",
     name: "成瀬 / 小林 (リハーサル)",
     img: "miyoshi",
@@ -110,7 +110,7 @@ export const events: Event[] = [
   },
   {
     start: "Feb 21, 2024 14:20:00",
-    end: "Feb 21, 2024 14:30:00",
+    end: "Feb 21, 2024 14:29:00",
     time: "14:20-14:30",
     name: "楊 / 河合 / 松井茂 (リハーサル)",
     img: "takayama",
